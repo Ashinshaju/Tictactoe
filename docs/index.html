@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Tac Toe</title>
+    <style>
+        .btn {
+            height: 80px;
+            width: 80px;
+            margin-left: 2px;
+
+        }
+    </style>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+
+<body>
+    <nav class="navbar navbar-light bg-light">
+
+        <span class="navbar-brand mb-0 h1">
+            Tic Tac Toe</span>
+
+    </nav>
+    <div class="container-fluid" style="height:500px;display: flex;justify-content: center;align-items: center;">
+        <div class="play-buttons"
+            style="height: 400px;width: 400px;display: flex;justify-content: center;align-items: center;">
+            <div>
+                <div>
+                    <button type="button" onclick="clicked('xoro1')" class="btn btn-outline-primary">
+                        <h1 id="xoro1"></h1>
+                    </button>
+                    <button type="button" onclick="clicked('xoro2')" class="btn btn-outline-primary">
+                        <h1 id="xoro2"></h1>
+                    </button>
+
+                    <button type="button" onclick="clicked('xoro3')" class="btn btn-outline-primary">
+                        <h1 id="xoro3"></h1>
+                    </button>
+
+                </div>
+                <div class="mt-2">
+                    <button type="button" onclick="clicked('xoro4')" class="btn btn-outline-primary">
+                        <h1 id="xoro4"></h1>
+                    </button>
+                    <button type="button" onclick="clicked('xoro5')" class="btn btn-outline-primary">
+                        <h1 id="xoro5"></h1>
+                    </button>
+                    <button type="button" onclick="clicked('xoro6')" class="btn btn-outline-primary">
+                        <h1 id="xoro6"></h1>
+                    </button>
+                </div>
+                <div class="mt-2">
+                    <button type="button" onclick="clicked('xoro7')" class="btn btn-outline-primary">
+                        <h1 id="xoro7"></h1>
+                    </button>
+                    <button type="button" onclick="clicked('xoro8')" class="btn btn-outline-primary">
+                        <h1 id="xoro8"></h1>
+                    </button>
+                    <button type="button" onclick="clicked('xoro9')" class="btn btn-outline-primary">
+                        <h1 id="xoro9"></h1>
+                    </button>
+                </div>
+            </div>
+
+        </div>
+
+
+    </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <script>
+        done = ["xoro1", "xoro2", "xoro3", "xoro4", "xoro5", "xoro6", "xoro7", "xoro8", "xoro9"]
+        function clicked(x) {
+
+            document.getElementById(x).innerHTML = "X"
+            document.getElementById(x).style.color = "green"
+            const index1 = done.indexOf(x);
+            if (index1 > -1) {
+                done.splice(index1, 1);
+            }
+
+            const random = Math.floor(Math.random() * done.length);
+            document.getElementById(done[random]).innerHTML = "O"
+            document.getElementById(done[random]).style.color = "red"
+
+
+            const index = done.indexOf(done[random]);
+            if (index > -1) {
+                done.splice(index, 1);
+            }
+
+            one = document.getElementById("xoro1").innerHTML
+
+            two = document.getElementById("xoro2").innerHTML
+
+            three = document.getElementById("xoro3").innerHTML
+
+            four = document.getElementById("xoro4").innerHTML
+
+
+            five = document.getElementById("xoro5").innerHTML
+
+
+            six = document.getElementById("xoro6").innerHTML
+
+
+            seven = document.getElementById("xoro7").innerHTML
+            
+            eight=document.getElementById("xoro8").innerHTML
+
+            nine=document.getElementById("xoro9").innerHTML
+            if (one && two && three=="X"){
+                console.log("X WON")
+            }else  if (one && two && three=="O"){
+                console.log("O WON")
+            }else if (four && five && six=="X"){
+                console.log("X WOn")
+            }else if (four && five && six=="O"){
+                console.log("O WN")
+              
+            }
+            
+            
+
+
+
+        }
+
+    </script>
+</body>
+
+</html>
